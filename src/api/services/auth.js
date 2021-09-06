@@ -1,6 +1,5 @@
 const Joi = require('@hapi/joi');
 const httpStatus = require('http-status');
-const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const APIError = require('../utils/APIError');
 const User = require('../models/user');
@@ -30,7 +29,7 @@ const login = async (body) => {
     email: Joi.string()
       .email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } }),
     password: Joi.string()
-      .pattern(new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})')),
+    ,
   });
   const { error } = schema.validate(body, { presence: 'required' });
   if (error) {
@@ -47,8 +46,7 @@ const login = async (body) => {
       status: httpStatus.BAD_REQUEST,
     });
   }
-  const validPassword = await bcrypt.compare(password, user.password);
-  if (!validPassword) {
+  if (password !== user.password) {
     throw new APIError({
       message: 'Invalid password',
       status: httpStatus.BAD_REQUEST,

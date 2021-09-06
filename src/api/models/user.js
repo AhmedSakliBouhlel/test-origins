@@ -31,21 +31,6 @@ class User {
     return users;
   }
 
-  static async findByIdAndUpdate(id, payload) {
-    const updatedAt = new Date();
-    const update = { ...payload, updatedAt };
-    const rows = await db('user').where({ id }).update(update);
-    if (!rows) return null;
-    const [user] = await User.find({ 'user.id': id });
-    return user;
-  }
-
-  static async findByIdAndDelete(id) {
-    const rows = await db('user').where({ id }).del();
-    if (!rows) return null;
-    return new User({ id });
-  }
-
   async insert() {
     this.createdAt = new Date();
     this.updatedAt = null;
