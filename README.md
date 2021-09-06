@@ -1,6 +1,6 @@
 # test-origins
 
-! DO NOT FORGET TO EDIT THE VARS FILE !
+  ! DO NOT FORGET TO CREATE THE .ENV FILE !
 
 ! DO NOT FORGET TO CREATE DATABASE test_origins to run the project !
 
