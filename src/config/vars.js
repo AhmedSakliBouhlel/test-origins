@@ -16,4 +16,5 @@ module.exports = {
   postgresUser: env.POSTGRES_USER,
   postgresPassword: env.POSTGRES_PASSWORD,
   postgresDatabase: env.POSTGRES_DATABASE,
+  jwtPrivateKey: env.JWT_PRIVATE_KEY,
 };

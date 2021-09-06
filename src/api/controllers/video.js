@@ -6,6 +6,11 @@ const list = async (req, res) => {
   return res.status(httpStatus.OK).json(videos);
 };
 
+const listByTag = async (req, res) => {
+  const videos = await videoService.listByTag(req.query);
+  return res.status(httpStatus.OK).json(videos);
+};
+
 const create = async (req, res) => {
   const video = await videoService.create(req.body);
   return res.status(httpStatus.OK).json(video);
@@ -23,6 +28,7 @@ const remove = async (req, res) => {
 
 module.exports = {
   list,
+  listByTag,
   create,
   update,
   remove,

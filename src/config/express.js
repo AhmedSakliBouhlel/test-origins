@@ -5,6 +5,7 @@ const morgan = require('morgan');
 
 const routes = require('../api/routes');
 const error = require('../api/middlewares/error');
+const { auth } = require('../api/middlewares/auth');
 const { logs, frontHost } = require('./vars');
 
 const corsOptions = {
@@ -16,6 +17,7 @@ const app = express();
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(morgan(logs));
+app.use(auth());
 app.use('/api', routes);
 
 app.use(error.converter);

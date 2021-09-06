@@ -33,8 +33,8 @@ class Video {
     return new Video({ id });
   }
 
-  static async findByTag(tagValue) {
-    const [tag] = await db('tag').select().where({ valeur: tagValue });
+  static async findByTag(query) {
+    const [tag] = await db('tag').select().where({ ...query });
     const videoTagAssociations = await db('videoTagAssociation').select().where({ idTag: tag.id });
     const videos = await Promise.all(videoTagAssociations.map(
       (videoTagAssociation) => db('video').select().where({ id: videoTagAssociation.idVideo }),

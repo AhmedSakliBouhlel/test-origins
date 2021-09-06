@@ -14,6 +14,11 @@ const list = async (query) => {
   return videos;
 };
 
+const listByTag = async (query) => {
+  const videos = await Video.findByTag({ ...query });
+  return videos;
+};
+
 const create = async (body) => {
   const { error } = schema.validate(body);
   if (error) {
@@ -69,6 +74,7 @@ const remove = async (id) => {
 
 module.exports = {
   list,
+  listByTag,
   create,
   update,
   remove,

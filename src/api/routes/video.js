@@ -1,6 +1,6 @@
 const express = require('express');
 const {
-  list, create, update, remove,
+  list, listByTag, create, update, remove,
 } = require('../controllers/video');
 
 const router = express.Router();
@@ -8,6 +8,10 @@ const router = express.Router();
 router
   .route('/')
   .get(list);
+
+router
+  .route('/listByTag')
+  .get(listByTag);
 
 router
   .route('/')
