@@ -23,7 +23,7 @@ describe('Tag', () => {
     });
   });
   describe('/GET Tag', () => {
-    it('it should return an empty array', (done) => {
+    it('it should get an empty array', (done) => {
       chai.request(server).get('/api/tag/')
         .end((err, res) => {
           res.should.have.status(200);
@@ -36,7 +36,7 @@ describe('Tag', () => {
   });
 
   describe('/POST Tag', () => {
-    it('it should return an object tag', (done) => {
+    it('it should get an object tag', (done) => {
       const tag = {
         valeur: 'test',
       };
@@ -66,7 +66,7 @@ describe('Tag', () => {
   });
 
   describe('/PUT Tag', () => {
-    it('it should return an object tag', (done) => {
+    it('it should get an object tag', (done) => {
       const id = 1;
       const tag = {
         valeur: 'testUpdated',
@@ -113,7 +113,7 @@ describe('Tag', () => {
   });
 
   describe('/DELETE Tag', () => {
-    it('it should return an object tag', (done) => {
+    it('it should get an object tag', (done) => {
       const id = '1';
       chai.request(server).delete(`/api/tag/${id}`)
         .end((err, res) => {

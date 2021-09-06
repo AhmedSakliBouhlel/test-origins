@@ -25,7 +25,7 @@ describe('Video', () => {
     });
   });
   describe('/GET Video', () => {
-    it('it should return an empty array', (done) => {
+    it('it should get an empty array', (done) => {
       chai.request(server).get('/api/video/')
         .end((err, res) => {
           res.should.have.status(200);
@@ -38,7 +38,7 @@ describe('Video', () => {
   });
 
   describe('/POST Video', () => {
-    it('it should return an object Video', (done) => {
+    it('it should get an object Video', (done) => {
       const video = {
         nom: 'test',
         description: 'test',
@@ -73,7 +73,7 @@ describe('Video', () => {
   });
 
   describe('/PUT Video', () => {
-    it('it should return an object Video', (done) => {
+    it('it should get an object Video', (done) => {
       const id = 1;
       const video = {
         nom: 'testUpdated',
@@ -127,7 +127,7 @@ describe('Video', () => {
   });
 
   describe('/DELETE Video', () => {
-    it('it should return an object Video', (done) => {
+    it('it should get an object Video', (done) => {
       const id = '1';
       chai.request(server).delete(`/api/video/${id}`)
         .end((err, res) => {
