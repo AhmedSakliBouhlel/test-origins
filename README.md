@@ -1,6 +1,6 @@
 # test-origins
 
-! DO NOT FORGET TO EDIT THE VARS FILE !
+  ! DO NOT FORGET TO CREATE THE .ENV FILE !
 
 ! DO NOT FORGET TO CREATE DATABASE test_origins to run the project !
 
@@ -8,4 +8,5 @@
 
 - To run the migrations : npm run migrate
 - To start the project : npm start
-- To run the test : npm run test 
+- To run the tests : npm run test 
+- To run the tests with coverage report : npm run test:coverage
