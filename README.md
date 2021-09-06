@@ -8,4 +8,5 @@
 
 - To run the migrations : npm run migrate
 - To start the project : npm start
-- To run the test : npm run test 
+- To run the tests : npm run test 
+- To run the tests with coverage report : npm run test:coverage
