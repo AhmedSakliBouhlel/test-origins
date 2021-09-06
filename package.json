@@ -7,7 +7,7 @@
     "start": "nodemon ./src/index.js",
     "migrate": "knex migrate:latest --knexfile src/config/knexfile.js",
     "test": "mocha -r esm ./__test__/integration/* --exit",
-    "test:coverage":"nyc --reporter=lcov --reporter=text-lcov mocha -r esm ./__test__/integration/* --exit"
+    "test:coverage": "nyc --reporter=lcov --reporter=text-lcov mocha -r esm ./__test__/integration/* --exit"
   },
   "repository": {
     "type": "git",
@@ -42,6 +42,8 @@
     "jsonwebtoken": "^8.5.1",
     "knex": "^0.95.11",
     "morgan": "^1.10.0",
-    "pg": "^8.7.1"
+    "pg": "^8.7.1",
+    "pm2": "^5.1.1",
+    "tsc": "^2.0.3"
   }
 }
