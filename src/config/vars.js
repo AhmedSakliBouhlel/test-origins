@@ -1,11 +1,19 @@
+const path = require('path');
+require('dotenv-safe').config({
+  path: path.join(__dirname, '../../.env'),
+  example: path.join(__dirname, '../../.env.example'),
+  allowEmptyValues: true,
+});
+
+const { env } = process;
 module.exports = {
-  env: 'dev',
-  port: '8800',
-  host: 'localhost',
-  logs: 'dev',
-  postgresHost: '127.0.0.1',
-  postgresPort: 5432,
-  postgresUser: 'han',
-  postgresPassword: 'han',
-  postgresDatabase: 'test_origins',
+  env: env.NODE_ENV,
+  port: env.PORT,
+  host: env.HOST,
+  logs: env.LOGS,
+  postgresHost: env.POSTGRES_HOST,
+  postgresPort: env.POSTGRES_PORT,
+  postgresUser: env.POSTGRES_USER,
+  postgresPassword: env.POSTGRES_PASSWORD,
+  postgresDatabase: env.POSTGRES_DATABASE,
 };
