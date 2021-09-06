@@ -1,6 +1,8 @@
 # test-origins
 
-  ! DO NOT FORGET TO CREATE THE .ENV FILE !
+Sorry for the use of knex, i didn't pay attention that using sequelize was required, my bad! :/
+
+! DO NOT FORGET TO CREATE THE .ENV FILE !
 
 ! DO NOT FORGET TO CREATE DATABASE test_origins to run the project !
 
